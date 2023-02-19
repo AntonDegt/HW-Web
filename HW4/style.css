@@ -1,0 +1,126 @@
+html, body { height: 100%; margin: 0; }
+body {background: #353	; }
+
+.gamefield{
+	width: 98 vw;
+	height: 40vw;
+
+	margin: auto;
+	position: relative;
+	top: calc((100% - 40vw) / 2);
+	z-index: 0;
+
+	background-image: url("img/grass.png");
+	background-repeat: repeat;
+	background-size: 40vh;
+}
+.pokeball{
+	width: 8vw;
+	height: 8vw;
+
+	position: absolute;
+	top: calc((100% - 10vw ) / 2 );
+	left: 1vw;
+	z-index: 1;
+
+	transition: 10s linear;
+
+	background-image: url("img/pokeball.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+.pokeball:hover{
+	left: 86vw;
+}
+
+.container{
+	height: 100%;
+	width: fit-content;
+
+	position: absolute;
+
+	pointer-events: none;
+}
+
+.trash {
+	width: 13vw;
+	height: 13vw;
+
+	position: relative;
+	z-index: 2;
+
+	animation-duration: 5s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	
+	
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+
+	pointer-events: all;
+	mix-blend-mode: hard-light;
+}
+
+.container:nth-of-type(2) { left: 18vw; }
+.container:nth-of-type(2) .trash{ 
+	background-image: url("img/DuskManeNecrozma.png"); 
+	animation-name: uptodown, rotate;
+}
+.container:nth-of-type(3)  { left: 35vw; }
+.container:nth-of-type(3) .trash{ 
+	background-image: url("img/Rayquaza.png");
+	top: 4vw;
+}
+.container:nth-of-type(4)  { left: 50vw; }
+.container:nth-of-type(4) .trash{ 
+	background-image: url("img/Zacian.png");
+	animation-name: uptodown, lefttoright, rotate;
+	animation-direction: alternate-reverse;
+	animation-duration: 2s;
+}
+
+@keyframes rotate{
+	0% { rotate: 0deg}
+	25% { rotate: 15deg; }
+	75% { rotate: -15deg}
+	100% { rotate: 0deg;}
+}
+@keyframes uptodown{
+	from { top: 0vw;}
+	to { top: 27vw;}
+}
+@keyframes lefttoright{
+	from { left: 0vw; }
+	to { left: 17vw; }
+}
+
+.prize, .prize div{
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+.prize{
+	width: 15vw;
+	height: 15vw;
+
+	position: absolute;
+	right: 2vw;
+	top: calc((100% - 12vw ) / 2 - 3vw );
+	z-index: 3;
+	pointer-events: none;
+
+	background-image: url("img/Machamp.png");
+
+	animation: rotate 3s linear infinite;
+}
+.prize div{
+	width: 10%;
+	height: 10%;
+	z-index: 0;
+
+	margin: 50% 0 0 25%;
+	background-image: url("img/Fissure.webp");;
+}
